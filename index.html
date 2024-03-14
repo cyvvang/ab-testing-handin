@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A/B Testing Documentation</title>
+  <title>A/B Testing Handin</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,29 +11,40 @@
 </head>
 <body>
   <h1>A/B Testing</h1>
+  
+  <hr>
+  
+  <section>
+    <h2>Overview</h2>
+    <p>We were given a copy of a website to modify and test to see if our new version, Version B, was better than the original, Version A.</p>
+    <p>
+      In order to assess the effectiveness of the websites, users had to complete a task, which was to schedule an appointment with Adam Ng, MD at Morristown Medical Center on April 23, 2024.
+    </p>
+
+  </section>
+
   <hr>
 
   <section>
     <h2>Data Collection</h2>
-
-  <div class="row">
-    <div>
-      <img src="images/version-a.png">
-      <p>Version A</p>
+    <div class="row">
+      <div>
+        <img src="images/version-a.png">
+        <p>Version A</p>
+      </div>
+      <div>
+        <img src="images/version-b.png">
+        <p>Version B</p>
+      </div> 
     </div>
-    <div>
-       <img src="images/version-b.png">
-       <p>Version B</p>
-    </div> 
-  </div>
-  
-  <h3>Changes I made</h3>
-  <ol>
-    <li>Added background color to each appointment row</li>
-    <li>Increased button contrast and emphasized schedule appointment CTA button</li>
-    <li>Increased appointment date contrast</li>
-    <li>Put dates in order</li>
-  </ol>
+    
+    <h3>Changes I made</h3>
+    <ol>
+      <li>Added background color to each appointment row</li>
+      <li>Increased button contrast and emphasized schedule appointment CTA button</li>
+      <li>Increased appointment date contrast</li>
+      <li>Put dates in order</li>
+    </ol>
   </section>
   
   <hr>
@@ -185,7 +196,7 @@
     <p>In total, I collected 30 data points for Version B while we collected 34 for Version A. Based on my computations, I concluded that there we can reject the null hypotheses for the misclick rate and total mouse distance; however, we failed to reject the null hypothesis for time on page.</p>
     <ul>
       <li>
-        The ratio between users who misclicked versus those who did not is much hier in Version A than Version B, indicating that Version B is less error-prone.
+        The ratio between users who misclicked versus those who did not is much higher in Version A than Version B, indicating that Version B is less error-prone.
       </li>
       <li>
         In Version A, the total mouse distance a user travels on average is about 1.42 times more pixels than Version B. Version B has a smaller variance than A, which indicates that the data is closer to this average in Version A.
@@ -196,6 +207,11 @@
     </p>
   </section>
 
+  <hr>
 
+  <section>
+    <h2>Reflection</h2>
+    <p>During studio, I was unaware that we were only supposed to make one change to the website. If I could redo the assignment, I would make sure that I only made one UI change so I was certain which exact feature was significant.</p>
+  </section>
 </body>
 </html>
