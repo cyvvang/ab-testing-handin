@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A/B Testing Handin</title>
+  <title>A/B Testing Documentation</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,26 +89,26 @@
       </tr>
       <tr>
         <td>chi^2</td>
-        <td>7.86545059</td>
+        <td>6.93498452</td>
       </tr>
       <tr>
         <td>p-value</td>
-        <td>0.00503882683614521</td>
+        <td>0.008452579459</td>
       </tr>
       <tr>
         <th>Expected Values Grid</th>
       </tr>
       <tr>
-        <td>13.38297872</td>
-        <td>20.61702128</td>
+        <td>3.71875</td>
+        <td>30.28125</td>
       </tr>
       <tr>
-        <td>23.61702128</td>
-        <td>36.38297872</td>
+        <td>3.28125</td>
+        <td>26.71875</td>
       </tr>
     </table>
 
-    <p>I chose the <strong>chi-squared test</strong> to compare two categorical variables, the number of misclicks versus non-misclicks across trials in Version A and Version B. This test was most applicable in testing whether or not there is a statistically significant difference across the two versions. Based on the output, this is indeed true because I got a p-value of 0.005, which is less than the standard alpha value of 0.05. Therefore, there is a 0.5% chance that there is no significant difference between the rate of misclicks across Versions A and B, which means that we reject the null hypothesis and conclude that there is indeed a significant difference between Versions A and B.</p>
+    <p>I chose the <strong>chi-squared test</strong> to compare two categorical variables, the number of misclicks versus non-misclicks across trials in Version A and Version B. This test was most applicable in testing whether or not there is a statistically significant difference across the two versions. Based on the output, this is indeed true because I got a p-value of 0.008, which is less than the standard alpha value of 0.05. Therefore, there is a 0.8% chance that there is no significant difference between the rate of misclicks across Versions A and B, which means that we reject the null hypothesis and conclude that there is indeed a significant difference between Versions A and B.</p>
 
     <h3>🕒 Time on page</h3>
     <strong><p>the time it takes to complete the task</p></strong>
@@ -196,7 +196,7 @@
     <p>In total, I collected 30 data points for Version B while we collected 34 for Version A. Based on my computations, I concluded that there we can reject the null hypotheses for the misclick rate and total mouse distance; however, we failed to reject the null hypothesis for time on page.</p>
     <ul>
       <li>
-        The ratio between users who misclicked versus those who did not is much higher in Version A than Version B, indicating that Version B is less error-prone.
+        The ratio between users who misclicked versus those who did not in terms of expected value is much higher in Version A than Version B, indicating that Version B is less error-prone.
       </li>
       <li>
         In Version A, the total mouse distance a user travels on average is about 1.42 times more pixels than Version B. Version B has a smaller variance than A, which indicates that the data is closer to this average in Version A.
