@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A/B Testing Documentation</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>A/B Testing</h1>
+  <hr>
+
+  <section>
+    <h2>Data Collection</h2>
+
+  <div class="row">
+    <div>
+      <img src="images/version-a.png">
+      <p>Version A</p>
+    </div>
+    <div>
+       <img src="images/version-b.png">
+       <p>Version B</p>
+    </div> 
+  </div>
+  
+  <h3>Changes I made</h3>
+  <ol>
+    <li>Added background color to each appointment row</li>
+    <li>Increased button contrast and emphasized schedule appointment CTA button</li>
+    <li>Increased appointment date contrast</li>
+    <li>Put dates in order</li>
+  </ol>
+  </section>
+  
+  <hr>
+
+  <section>
+    <h2>Creating Hypotheses</h2>
+    <h3>❌ Misclick rate</h3>
+    <ul>
+      <li><strong>Null: </strong>There will be no difference between the frequency of misclicks on Version A versus Version B.</li>
+      <li><strong>Alternative: </strong>There will be a difference between the frequency of misclicks on Version A versus Version B.</li>
+      <li><strong>Prediction: </strong>I believe that the null hypothesis will not be rejected because I think it's likely for a user to misclick when they are under a time constraint, but in this test, there is none. Therefore, I believe that it will simply take a user longer to find the correct "schedule appointment" button without compromising accuracy.</li>
+    </ul>
+    
+    <h3>🕒 Time on page</h3>
+    <ul>
+      <li><strong>Null: </strong>The amount of time a user spends to complete the task on Version A will be the same as the time a user spends on Version B.</li>
+      <li><strong>Alternative: </strong>The amount of time a user spends to complete the task on Version A will be different than the time a user spends on Version B.</li>
+      <li><strong>Prediction: </strong>I believe that the null hypothesis will be rejected because the increased usability in Version B will guide the user and ultimately make it easier for them to complete the task. The clear distinction between each row using a background color, bolder dates, and buttons with more contrast will hopefully decrease the time it takes for a user to complete the task on Version B compared for Version A.</li>
+    </ul>
+
+    <h3>🖱️ Total mouse distance</h3>
+    <ul>
+      <li><strong>Null: </strong>There will be no difference between the total distance traveled in pixels by the user's mouse on Version A versus Version B.</li>
+      <li><strong>Alternative: </strong>There will be a difference between the total distance traveled in pixels by the user's mouse on Version A versus Version B.</li>
+      <li><strong>Prediction: </strong>I believe that the null hypothesis will be rejected because due to the increased usability stated previously, the user will spend less time trying to navigate Version B with their mouse. Additionally, since users are testing Version B after they have already gained familiarity with and tested Version A, their experience will enable them to find the correct appointment faster.</li>
+    </ul>
+  </section>
+  
+  <hr>
+    
+  <section>
+    <h3>❌ Misclick Rate</h3>
+    <strong><p>how frequently users clicked the wrong button</p></strong>
+
+    <table>
+      <tr>
+        <th>Outputs</th>
+      </tr>
+      <tr>
+        <td>df</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>chi^2</td>
+        <td>7.86545059</td>
+      </tr>
+      <tr>
+        <td>p-value</td>
+        <td>0.00503882683614521</td>
+      </tr>
+      <tr>
+        <th>Expected Values Grid</th>
+      </tr>
+      <tr>
+        <td>13.38297872</td>
+        <td>20.61702128</td>
+      </tr>
+      <tr>
+        <td>23.61702128</td>
+        <td>36.38297872</td>
+      </tr>
+    </table>
+
+    <p>I chose the <strong>chi-squared test</strong> to compare two categorical variables, the number of misclicks versus non-misclicks across trials in Version A and Version B. This test was most applicable in testing whether or not there is a statistically significant difference across the two versions. Based on the output, this is indeed true because I got a p-value of 0.005, which is less than the standard alpha value of 0.05. Therefore, there is a 0.5% chance that there is no significant difference between the rate of misclicks across Versions A and B, which means that we reject the null hypothesis and conclude that there is indeed a significant difference between Versions A and B.</p>
+
+    <h3>🕒 Time on page</h3>
+    <strong><p>the time it takes to complete the task</p></strong>
+    <table>
+      <tr>
+        <th>Outputs</th>
+      </tr>
+      <tr>
+        <td>Avg(A)</td>
+        <td>12860.44118</td>
+      </tr>
+      <tr>
+        <td>Variance(A)</td>
+        <td>140609949</td>
+      </tr>
+      <tr>
+        <td>Avg(B)</td>
+        <td>9693.7</td>
+      </tr>
+      <tr>
+        <td>Variance(B)</td>
+        <td>42191576.0</td>
+      </tr>
+      <tr>
+        <td>Degrees of Freedom</td>
+        <td>52.36921823</td>
+      </tr>
+      <tr>
+        <td>T-score</td>
+        <td>-1.345179938</td>
+      </tr>
+      <tr>
+        <td>P-value (A != B)</td>
+        <td>0.1843634978</td>
+      </tr>
+    </table>
+    <p>
+      I chose the <strong>two-tailed t-test</strong> to determine whether or not there was a difference between Versions A and B in terms of the amount of time the user spent on the page because I wanted to know if there was a statistically significant difference to then conduct a one-tailed t-test. After computing the results, I ended up with a p-value of 0.18, which is less than the alpha value of 0.05. Therefore, we fail to reject the null hypothesis and there is not enough evidence to conclude that there is a difference between Version A and B in terms of the time it takes for a user to complete the task.
+    </p>
+
+    <h3>🖱️ Total mouse distance</h3>
+    <strong><p>how many pixels the user’s mouse traveled</p></strong>
+    <table>
+      <tr>
+        <th>Outputs</th>
+      </tr>
+      <tr>
+        <td>Avg(A)</td>
+        <td>4006.559655</td>
+      </tr>
+      <tr>
+        <td>Variance(A)</td>
+        <td>6401849.3</td>
+      </tr>
+      <tr>
+        <td>Avg(B)</td>
+        <td>2811.926603</td>
+      </tr>
+      <tr>
+        <td>Variance(B)</td>
+        <td>644947.4795</td>
+      </tr>
+      <tr>
+        <td>Degrees of Freedom</td>
+        <td>40.36702354</td>
+      </tr>
+      <tr>
+        <td>T-score</td>
+        <td>-2.608220302</td>
+      </tr>
+      <tr>
+        <td>P-value (A != B)</td>
+        <td>0.01269986706</td>
+      </tr>
+      <p>
+        I used a <strong>two-tailed t-test</strong> since I wasn't comparing two categorical variables and wasn't confident with the direction of the test to do a one-tailed t-test. I ended up with a p-value of 0.01, which is less than the alpha value of 0.05, meaning that there is a statistically significant difference between Versions A and B in affecting the user's total mouse distance. Therefore, we reject the null hypothesis.
+      </p>
+    </table>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Summary Statistics</h2>
+    <p>In total, I collected 30 data points for Version B while we collected 34 for Version A. Based on my computations, I concluded that there we can reject the null hypotheses for the misclick rate and total mouse distance; however, we failed to reject the null hypothesis for time on page.</p>
+    <ul>
+      <li>
+        The ratio between users who misclicked versus those who did not is much hier in Version A than Version B, indicating that Version B is less error-prone.
+      </li>
+      <li>
+        In Version A, the total mouse distance a user travels on average is about 1.42 times more pixels than Version B. Version B has a smaller variance than A, which indicates that the data is closer to this average in Version A.
+      </li>
+    </ul>
+    <p>
+      Based on both the misclick rate and total mouse distance, we can conclude that Version B is likely more effective than Version A.
+    </p>
+  </section>
+
+
+</body>
+</html>

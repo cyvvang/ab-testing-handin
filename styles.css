@@ -1,0 +1,21 @@
+table, th, td {
+  border: 1px solid black;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  line-height: 175%;
+  margin: 100px 200px;
+}
+
+hr {
+  margin: 2rem 0;
+}
+
+.row {
+  display: flex;
+}
+
+img {
+  width: 100%;
+}
